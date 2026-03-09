@@ -13,7 +13,7 @@
         line-height: 1.7;
         max-width: 800px;
         margin: auto;
-        padding: 40px 20px;
+        padding: 40px 20px 60px;
         color: #222;
       }
 
@@ -41,157 +41,380 @@
       a:hover {
         text-decoration: underline;
       }
- 
+
       .effective {
         color: #666;
         margin-bottom: 30px;
       }
+
+      /* Language switcher */
+      .lang-switcher {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: white;
+        border: 1px solid #e4e5e8;
+        border-radius: 8px;
+        padding: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        z-index: 100;
+      }
+
+      .lang-switcher button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #888;
+        font-family: inherit;
+        transition: 0.15s;
+      }
+
+      .lang-switcher button.active {
+        background: #f2f3f5;
+        color: #222;
+      }
+
+      .lang-switcher button:hover:not(.active) {
+        color: #444;
+      }
+
+      /* Hide non-active language content */
+      html[lang="en"] .lang-tr { display: none; }
+      html[lang="tr"] .lang-en { display: none; }
     </style>
   </head>
 
   <body>
-    <h1>Terms of Service – EverAfter</h1>
-    <p class="effective"><strong>Effective Date:</strong> March 9, 2026</p>
+    <div class="lang-switcher">
+      <button id="btn-en" onclick="switchLang('en')" class="active">EN</button>
+      <button id="btn-tr" onclick="switchLang('tr')">TR</button>
+    </div>
 
-    <p>
-      Welcome to EverAfter. These Terms of Service ("Terms") govern your use of
-      the EverAfter mobile application.
-    </p>
+    <!-- English Content -->
+    <div class="lang-en">
+      <h1>Terms of Service – EverAfter</h1>
+      <p class="effective"><strong>Effective Date:</strong> March 9, 2026</p>
 
-    <p>
-      By using the EverAfter app, you agree to these Terms. If you do not agree
-      with these Terms, please do not use the application.
-    </p>
+      <p>
+        Welcome to EverAfter. These Terms of Service ("Terms") govern your use of
+        the EverAfter mobile application.
+      </p>
 
-    <hr />
+      <p>
+        By using the EverAfter app, you agree to these Terms. If you do not agree
+        with these Terms, please do not use the application.
+      </p>
 
-    <h2>1. Description of the Service</h2>
+      <hr />
 
-    <p>
-      EverAfter is a mobile application that allows users to generate AI-based
-      images using photos selected from their device.
-    </p>
+      <h2>1. Description of the Service</h2>
 
-    <p>
-      The app processes images in order to create new visual content based on
-      the user’s request.
-    </p>
+      <p>
+        EverAfter is a mobile application that allows users to generate AI-based
+        images using photos selected from their device.
+      </p>
 
-    <h2>2. User Responsibilities</h2>
+      <p>
+        The app processes images in order to create new visual content based on
+        the user's request.
+      </p>
 
-    <p>By using EverAfter, you agree that:</p>
+      <h2>2. User Responsibilities</h2>
 
-    <ul>
-      <li>
-        You will only upload or use photos that you have the right to use.
-      </li>
-      <li>
-        You will not use the app for illegal, harmful, or abusive purposes.
-      </li>
-      <li>
-        You will not attempt to misuse, reverse engineer, or disrupt the
-        application.
-      </li>
-    </ul>
+      <p>By using EverAfter, you agree that:</p>
 
-    <p>
-      Users are fully responsible for the content they upload or generate using
-      the app.
-    </p>
+      <ul>
+        <li>
+          You will only upload or use photos that you have the right to use.
+        </li>
+        <li>
+          You will not use the app for illegal, harmful, or abusive purposes.
+        </li>
+        <li>
+          You will not attempt to misuse, reverse engineer, or disrupt the
+          application.
+        </li>
+      </ul>
 
-    <h2>3. User Content</h2>
+      <p>
+        Users are fully responsible for the content they upload or generate using
+        the app.
+      </p>
 
-    <p>Photos selected by users remain the property of the user.</p>
+      <h2>3. User Content</h2>
 
-    <p>
-      EverAfter does not claim ownership over user photos or generated images.
-    </p>
+      <p>Photos selected by users remain the property of the user.</p>
 
-    <p>
-      Users are responsible for ensuring that they have the necessary rights to
-      use any images they upload.
-    </p>
+      <p>
+        EverAfter does not claim ownership over user photos or generated images.
+      </p>
 
-    <h2>4. Generated Images</h2>
+      <p>
+        Users are responsible for ensuring that they have the necessary rights to
+        use any images they upload.
+      </p>
 
-    <p>Images generated by EverAfter:</p>
+      <h2>4. Generated Images</h2>
 
-    <ul>
-      <li>Are created based on the user’s input</li>
-      <li>Are stored only on the user’s device</li>
-      <li>Are not permanently stored by EverAfter</li>
-    </ul>
+      <p>Images generated by EverAfter:</p>
 
-    <p>
-      EverAfter does not guarantee that generated content will meet user
-      expectations.
-    </p>
+      <ul>
+        <li>Are created based on the user's input</li>
+        <li>Are stored only on the user's device</li>
+        <li>Are not permanently stored by EverAfter</li>
+      </ul>
 
-    <h2>5. Prohibited Uses</h2>
+      <p>
+        EverAfter does not guarantee that generated content will meet user
+        expectations.
+      </p>
 
-    <p>Users may not use EverAfter to generate or distribute content that:</p>
+      <h2>5. Prohibited Uses</h2>
 
-    <ul>
-      <li>Violates laws or regulations</li>
-      <li>Infringes intellectual property rights</li>
-      <li>Harasses, abuses, or harms others</li>
-      <li>Contains illegal or harmful material</li>
-    </ul>
+      <p>Users may not use EverAfter to generate or distribute content that:</p>
 
-    <p>
-      EverAfter reserves the right to restrict access to the app if misuse is
-      detected.
-    </p>
+      <ul>
+        <li>Violates laws or regulations</li>
+        <li>Infringes intellectual property rights</li>
+        <li>Harasses, abuses, or harms others</li>
+        <li>Contains illegal or harmful material</li>
+      </ul>
 
-    <h2>6. Intellectual Property</h2>
+      <p>
+        EverAfter reserves the right to restrict access to the app if misuse is
+        detected.
+      </p>
 
-    <p>
-      The EverAfter application, including its design, software, and
-      functionality, is owned by EverAfter and protected by applicable
-      intellectual property laws.
-    </p>
+      <h2>6. Intellectual Property</h2>
 
-    <p>
-      Users may not copy, modify, distribute, or exploit the application without
-      permission.
-    </p>
+      <p>
+        The EverAfter application, including its design, software, and
+        functionality, is owned by EverAfter and protected by applicable
+        intellectual property laws.
+      </p>
 
-    <h2>7. Service Availability</h2>
+      <p>
+        Users may not copy, modify, distribute, or exploit the application without
+        permission.
+      </p>
 
-    <p>
-      We strive to provide reliable service, but EverAfter does not guarantee
-      uninterrupted or error-free operation.
-    </p>
+      <h2>7. Service Availability</h2>
 
-    <p>The app may be updated, modified, or discontinued at any time.</p>
+      <p>
+        We strive to provide reliable service, but EverAfter does not guarantee
+        uninterrupted or error-free operation.
+      </p>
 
-    <h2>8. Limitation of Liability</h2>
+      <p>The app may be updated, modified, or discontinued at any time.</p>
 
-    <p>EverAfter is provided on an "as is" basis.</p>
+      <h2>8. Limitation of Liability</h2>
 
-    <p>
-      To the maximum extent permitted by law, EverAfter shall not be liable for
-      any indirect, incidental, or consequential damages resulting from the use
-      of the application.
-    </p>
+      <p>EverAfter is provided on an "as is" basis.</p>
 
-    <h2>9. Changes to These Terms</h2>
+      <p>
+        To the maximum extent permitted by law, EverAfter shall not be liable for
+        any indirect, incidental, or consequential damages resulting from the use
+        of the application.
+      </p>
 
-    <p>We may update these Terms from time to time.</p>
+      <h2>9. Changes to These Terms</h2>
 
-    <p>
-      When changes are made, the updated date will be reflected at the top of
-      the document.
-    </p>
+      <p>We may update these Terms from time to time.</p>
 
-    <p>Continued use of the app means you accept the updated Terms.</p>
+      <p>
+        When changes are made, the updated date will be reflected at the top of
+        the document.
+      </p>
 
-    <h2>10. Contact</h2>
+      <p>Continued use of the app means you accept the updated Terms.</p>
 
-    <p>If you have questions about these Terms, please contact:</p>
+      <h2>10. Contact</h2>
 
-    <p>
-      <a href="mailto:support@everafter.app">support@everafter.app</a>
-    </p>
+      <p>If you have questions about these Terms, please contact:</p>
+
+      <p>
+        <a href="mailto:support@everafter.app">support@everafter.app</a>
+      </p>
+    </div>
+
+    <!-- Turkish Content -->
+    <div class="lang-tr">
+      <h1>Kullanım Koşulları – EverAfter</h1>
+      <p class="effective"><strong>Yürürlük Tarihi:</strong> 9 Mart 2026</p>
+
+      <p>
+        EverAfter'a hoş geldiniz. Bu Kullanım Koşulları ("Koşullar"), EverAfter
+        mobil uygulamasının kullanımınızı düzenler.
+      </p>
+
+      <p>
+        EverAfter uygulamasını kullanarak bu Koşulları kabul etmiş olursunuz.
+        Bu Koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayınız.
+      </p>
+
+      <hr />
+
+      <h2>1. Hizmetin Tanımı</h2>
+
+      <p>
+        EverAfter, kullanıcıların cihazlarından seçtikleri fotoğraflar kullanılarak
+        yapay zeka tabanlı görüntüler oluşturmasına olanak tanıyan bir mobil
+        uygulamadır.
+      </p>
+
+      <p>
+        Uygulama, kullanıcının talebine göre yeni görsel içerik oluşturmak amacıyla
+        görüntüleri işler.
+      </p>
+
+      <h2>2. Kullanıcı Sorumlulukları</h2>
+
+      <p>EverAfter'ı kullanarak şunları kabul edersiniz:</p>
+
+      <ul>
+        <li>
+          Yalnızca kullanma hakkına sahip olduğunuz fotoğrafları yükleyecek veya
+          kullanacaksınız.
+        </li>
+        <li>
+          Uygulamayı yasadışı, zararlı veya kötüye kullanım amaçlı olarak
+          kullanmayacaksınız.
+        </li>
+        <li>
+          Uygulamayı kötüye kullanmaya, tersine mühendislik yapmaya veya aksatmaya
+          çalışmayacaksınız.
+        </li>
+      </ul>
+
+      <p>
+        Kullanıcılar, uygulamayı kullanarak yükledikleri veya oluşturdukları
+        içerikten tamamen sorumludur.
+      </p>
+
+      <h2>3. Kullanıcı İçeriği</h2>
+
+      <p>Kullanıcılar tarafından seçilen fotoğraflar kullanıcıya ait olmaya devam eder.</p>
+
+      <p>
+        EverAfter, kullanıcı fotoğrafları veya oluşturulan görüntüler üzerinde
+        mülkiyet hakkı iddia etmez.
+      </p>
+
+      <p>
+        Kullanıcılar, yükledikleri görüntüleri kullanmak için gerekli haklara sahip
+        olduklarını sağlamaktan sorumludur.
+      </p>
+
+      <h2>4. Oluşturulan Görüntüler</h2>
+
+      <p>EverAfter tarafından oluşturulan görüntüler:</p>
+
+      <ul>
+        <li>Kullanıcının girdisine göre oluşturulur</li>
+        <li>Yalnızca kullanıcının cihazında depolanır</li>
+        <li>EverAfter tarafından kalıcı olarak saklanmaz</li>
+      </ul>
+
+      <p>
+        EverAfter, oluşturulan içeriğin kullanıcı beklentilerini karşılayacağını
+        garanti etmez.
+      </p>
+
+      <h2>5. Yasaklanan Kullanımlar</h2>
+
+      <p>
+        Kullanıcılar EverAfter'ı aşağıdaki içerikleri oluşturmak veya dağıtmak
+        için kullanamaz:
+      </p>
+
+      <ul>
+        <li>Yasaları veya düzenlemeleri ihlal eden içerikler</li>
+        <li>Fikri mülkiyet haklarını ihlal eden içerikler</li>
+        <li>Başkalarını taciz eden, istismar eden veya zarar veren içerikler</li>
+        <li>Yasadışı veya zararlı materyal içeren içerikler</li>
+      </ul>
+
+      <p>
+        EverAfter, kötüye kullanım tespit edilmesi durumunda uygulamaya erişimi
+        kısıtlama hakkını saklı tutar.
+      </p>
+
+      <h2>6. Fikri Mülkiyet</h2>
+
+      <p>
+        EverAfter uygulaması, tasarımı, yazılımı ve işlevselliği dahil olmak üzere
+        EverAfter'a aittir ve geçerli fikri mülkiyet yasalarıyla korunmaktadır.
+      </p>
+
+      <p>
+        Kullanıcılar, izin almadan uygulamayı kopyalayamaz, değiştiremez,
+        dağıtamaz veya istismar edemez.
+      </p>
+
+      <h2>7. Hizmet Kullanılabilirliği</h2>
+
+      <p>
+        Güvenilir hizmet sunmaya çalışıyoruz; ancak EverAfter, kesintisiz veya
+        hatasız bir çalışma garantisi vermemektedir.
+      </p>
+
+      <p>
+        Uygulama herhangi bir zamanda güncellenebilir, değiştirilebilir veya
+        sona erdirilebilir.
+      </p>
+
+      <h2>8. Sorumluluğun Sınırlandırılması</h2>
+
+      <p>EverAfter, "olduğu gibi" bir temel üzerinde sağlanmaktadır.</p>
+
+      <p>
+        Yasanın izin verdiği azami ölçüde, EverAfter, uygulamanın kullanımından
+        kaynaklanan dolaylı, tesadüfi veya sonuçsal zararlardan sorumlu olmayacaktır.
+      </p>
+
+      <h2>9. Bu Koşullardaki Değişiklikler</h2>
+
+      <p>Bu Koşulları zaman zaman güncelleyebiliriz.</p>
+
+      <p>
+        Değişiklikler yapıldığında, güncellenen tarih belgenin başında
+        yansıtılacaktır.
+      </p>
+
+      <p>
+        Uygulamayı kullanmaya devam etmeniz, güncellenmiş Koşulları kabul
+        ettiğiniz anlamına gelir.
+      </p>
+
+      <h2>10. İletişim</h2>
+
+      <p>Bu Koşullar hakkında sorularınız için lütfen şu adresten iletişime geçin:</p>
+
+      <p>
+        <a href="mailto:support@everafter.app">support@everafter.app</a>
+      </p>
+    </div>
+
+    <script>
+      function switchLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('ea-lang', lang);
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+        document.title = lang === 'tr'
+          ? 'Kullanım Koşulları – EverAfter'
+          : 'Terms of Service – EverAfter';
+      }
+
+      const stored = localStorage.getItem('ea-lang');
+      if (stored === 'tr') switchLang('tr');
+    </script>
   </body>
 </html>

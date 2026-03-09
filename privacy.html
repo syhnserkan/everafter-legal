@@ -13,7 +13,7 @@
         line-height: 1.7;
         max-width: 800px;
         margin: auto;
-        padding: 40px 20px;
+        padding: 40px 20px 60px;
         color: #222;
       }
 
@@ -50,159 +50,378 @@
       strong {
         font-weight: 600;
       }
+
+      /* Language switcher */
+      .lang-switcher {
+        position: fixed;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: white;
+        border: 1px solid #e4e5e8;
+        border-radius: 8px;
+        padding: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        z-index: 100;
+      }
+
+      .lang-switcher button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #888;
+        font-family: inherit;
+        transition: 0.15s;
+      }
+
+      .lang-switcher button.active {
+        background: #f2f3f5;
+        color: #222;
+      }
+
+      .lang-switcher button:hover:not(.active) {
+        color: #444;
+      }
+
+      /* Hide non-active language content */
+      html[lang="en"] .lang-tr { display: none; }
+      html[lang="tr"] .lang-en { display: none; }
     </style>
   </head>
 
   <body>
-    <h1>Privacy Policy – EverAfter</h1>
-    <p class="effective"><strong>Effective Date:</strong> March 9, 2026</p>
+    <div class="lang-switcher">
+      <button id="btn-en" onclick="switchLang('en')" class="active">EN</button>
+      <button id="btn-tr" onclick="switchLang('tr')">TR</button>
+    </div>
 
-    <p>
-      EverAfter ("we", "our", or "us") respects your privacy. This Privacy
-      Policy explains how our mobile application
-      <strong>EverAfter</strong> collects, uses, and protects information when
-      you use the app.
-    </p>
+    <!-- English Content -->
+    <div class="lang-en">
+      <h1>Privacy Policy – EverAfter</h1>
+      <p class="effective"><strong>Effective Date:</strong> March 9, 2026</p>
 
-    <p>
-      By using the EverAfter mobile application, you agree to the practices
-      described in this Privacy Policy.
-    </p>
+      <p>
+        EverAfter ("we", "our", or "us") respects your privacy. This Privacy
+        Policy explains how our mobile application
+        <strong>EverAfter</strong> collects, uses, and protects information when
+        you use the app.
+      </p>
 
-    <hr />
+      <p>
+        By using the EverAfter mobile application, you agree to the practices
+        described in this Privacy Policy.
+      </p>
 
-    <h2>1. Information We Collect</h2>
+      <hr />
 
-    <p>
-      EverAfter is designed to minimize data collection. We do not require
-      account creation and we do not collect personal identity information.
-    </p>
+      <h2>1. Information We Collect</h2>
 
-    <p>
-      However, the app may access the following information in order to function
-      properly:
-    </p>
+      <p>
+        EverAfter is designed to minimize data collection. We do not require
+        account creation and we do not collect personal identity information.
+      </p>
 
-    <ul>
-      <li>Photos selected by the user from the device's photo library</li>
-      <li>Basic device information necessary for app functionality</li>
-      <li>Optional analytics data (if analytics tools are used)</li>
-    </ul>
+      <p>
+        However, the app may access the following information in order to function
+        properly:
+      </p>
 
-    <h2>2. User Photos</h2>
+      <ul>
+        <li>Photos selected by the user from the device's photo library</li>
+        <li>Basic device information necessary for app functionality</li>
+        <li>Optional analytics data (if analytics tools are used)</li>
+      </ul>
 
-    <p>
-      EverAfter allows users to select photos from their device in order to
-      generate AI-based images.
-    </p>
+      <h2>2. User Photos</h2>
 
-    <p>Important points regarding user photos:</p>
+      <p>
+        EverAfter allows users to select photos from their device in order to
+        generate AI-based images.
+      </p>
 
-    <ul>
-      <li>
-        Photos are
-        <strong>only accessed after the user explicitly selects them</strong>
-      </li>
-      <li>
-        Photos are used
-        <strong>solely for generating the requested AI image</strong>
-      </li>
-      <li>Photos are <strong>not permanently stored by EverAfter</strong></li>
-      <li>Photos are <strong>not used to train AI models</strong></li>
-    </ul>
+      <p>Important points regarding user photos:</p>
 
-    <p>
-      Once the generation process is completed, the original photos are not
-      retained by the application.
-    </p>
+      <ul>
+        <li>
+          Photos are
+          <strong>only accessed after the user explicitly selects them</strong>
+        </li>
+        <li>
+          Photos are used
+          <strong>solely for generating the requested AI image</strong>
+        </li>
+        <li>Photos are <strong>not permanently stored by EverAfter</strong></li>
+        <li>Photos are <strong>not used to train AI models</strong></li>
+      </ul>
 
-    <h2>3. Generated Images</h2>
+      <p>
+        Once the generation process is completed, the original photos are not
+        retained by the application.
+      </p>
 
-    <p>Images generated by the EverAfter app:</p>
+      <h2>3. Generated Images</h2>
 
-    <ul>
-      <li>Are saved <strong>only on the user's device</strong></li>
-      <li>Are stored in <strong>local device storage</strong></li>
-      <li>Are <strong>not uploaded to EverAfter servers</strong></li>
-      <li>Are <strong>not shared with third parties</strong></li>
-    </ul>
+      <p>Images generated by the EverAfter app:</p>
 
-    <p>
-      Users have full control over generated images and may delete them from
-      their device at any time.
-    </p>
+      <ul>
+        <li>Are saved <strong>only on the user's device</strong></li>
+        <li>Are stored in <strong>local device storage</strong></li>
+        <li>Are <strong>not uploaded to EverAfter servers</strong></li>
+        <li>Are <strong>not shared with third parties</strong></li>
+      </ul>
 
-    <h2>4. Data Storage</h2>
+      <p>
+        Users have full control over generated images and may delete them from
+        their device at any time.
+      </p>
 
-    <p>EverAfter does not maintain a central database of user images.</p>
+      <h2>4. Data Storage</h2>
 
-    <ul>
-      <li>No user photos are stored on EverAfter servers</li>
-      <li>No generated images are stored on EverAfter servers</li>
-      <li>All generated content remains on the user's device</li>
-    </ul>
+      <p>EverAfter does not maintain a central database of user images.</p>
 
-    <h2>5. Third-Party Services</h2>
+      <ul>
+        <li>No user photos are stored on EverAfter servers</li>
+        <li>No generated images are stored on EverAfter servers</li>
+        <li>All generated content remains on the user's device</li>
+      </ul>
 
-    <p>
-      EverAfter may use limited third-party services that help operate the app,
-      such as:
-    </p>
+      <h2>5. Third-Party Services</h2>
 
-    <ul>
-      <li>Analytics tools</li>
-      <li>AI image generation services</li>
-    </ul>
+      <p>
+        EverAfter may use limited third-party services that help operate the app,
+        such as:
+      </p>
 
-    <p>
-      These services may temporarily process images in order to generate the
-      requested output, but EverAfter does not allow them to store or reuse user
-      content beyond the processing needed to provide the service.
-    </p>
+      <ul>
+        <li>Analytics tools</li>
+        <li>AI image generation services</li>
+      </ul>
 
-    <h2>6. Data Security</h2>
+      <p>
+        These services may temporarily process images in order to generate the
+        requested output, but EverAfter does not allow them to store or reuse user
+        content beyond the processing needed to provide the service.
+      </p>
 
-    <p>
-      We take reasonable measures to protect the information processed within
-      the app. However, no digital service can guarantee absolute security.
-    </p>
+      <h2>6. Data Security</h2>
 
-    <p>
-      Users are responsible for managing and securing the content stored on
-      their own devices.
-    </p>
+      <p>
+        We take reasonable measures to protect the information processed within
+        the app. However, no digital service can guarantee absolute security.
+      </p>
 
-    <h2>7. Children's Privacy</h2>
+      <p>
+        Users are responsible for managing and securing the content stored on
+        their own devices.
+      </p>
 
-    <p>EverAfter is not directed toward children under the age of 13.</p>
+      <h2>7. Children's Privacy</h2>
 
-    <p>We do not knowingly collect personal information from children.</p>
+      <p>EverAfter is not directed toward children under the age of 13.</p>
 
-    <p>
-      If you believe that a child has provided information through the app,
-      please contact us and we will take appropriate action.
-    </p>
+      <p>We do not knowingly collect personal information from children.</p>
 
-    <h2>8. Changes to This Privacy Policy</h2>
+      <p>
+        If you believe that a child has provided information through the app,
+        please contact us and we will take appropriate action.
+      </p>
 
-    <p>We may update this Privacy Policy from time to time.</p>
+      <h2>8. Changes to This Privacy Policy</h2>
 
-    <p>
-      When we do, we will update the "Effective Date" at the top of this
-      document. Continued use of the app after changes indicates acceptance of
-      the updated policy.
-    </p>
+      <p>We may update this Privacy Policy from time to time.</p>
 
-    <h2>9. Contact</h2>
+      <p>
+        When we do, we will update the "Effective Date" at the top of this
+        document. Continued use of the app after changes indicates acceptance of
+        the updated policy.
+      </p>
 
-    <p>
-      If you have any questions about this Privacy Policy, you may contact us
-      at:
-    </p>
+      <h2>9. Contact</h2>
 
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:support@everafter.app">support@everafter.app</a>
-    </p>
+      <p>
+        If you have any questions about this Privacy Policy, you may contact us
+        at:
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:support@everafter.app">support@everafter.app</a>
+      </p>
+    </div>
+
+    <!-- Turkish Content -->
+    <div class="lang-tr">
+      <h1>Gizlilik Politikası – EverAfter</h1>
+      <p class="effective"><strong>Yürürlük Tarihi:</strong> 9 Mart 2026</p>
+
+      <p>
+        EverAfter ("biz", "bizim" veya "bize") gizliliğinize saygı duyar. Bu
+        Gizlilik Politikası, mobil uygulamamız <strong>EverAfter</strong>'ı
+        kullandığınızda bilgilerin nasıl toplandığını, kullanıldığını ve
+        korunduğunu açıklar.
+      </p>
+
+      <p>
+        EverAfter mobil uygulamasını kullanarak bu Gizlilik Politikasında
+        açıklanan uygulamaları kabul etmiş olursunuz.
+      </p>
+
+      <hr />
+
+      <h2>1. Topladığımız Bilgiler</h2>
+
+      <p>
+        EverAfter, veri toplamayı en aza indirecek şekilde tasarlanmıştır. Hesap
+        oluşturma gerektirmez ve kişisel kimlik bilgisi toplamaz.
+      </p>
+
+      <p>
+        Ancak uygulama, düzgün çalışabilmek için aşağıdaki bilgilere erişebilir:
+      </p>
+
+      <ul>
+        <li>Kullanıcının cihazındaki fotoğraf kütüphanesinden seçtiği fotoğraflar</li>
+        <li>Uygulama işlevselliği için gerekli temel cihaz bilgileri</li>
+        <li>Opsiyonel analitik veriler (analitik araçlar kullanılıyorsa)</li>
+      </ul>
+
+      <h2>2. Kullanıcı Fotoğrafları</h2>
+
+      <p>
+        EverAfter, kullanıcıların yapay zeka tabanlı görüntüler oluşturmak için
+        cihazlarından fotoğraf seçmelerine olanak tanır.
+      </p>
+
+      <p>Kullanıcı fotoğraflarına ilişkin önemli noktalar:</p>
+
+      <ul>
+        <li>
+          Fotoğraflara
+          <strong>yalnızca kullanıcı açıkça seçim yaptıktan sonra erişilir</strong>
+        </li>
+        <li>
+          Fotoğraflar
+          <strong>yalnızca istenen yapay zeka görüntüsünü oluşturmak amacıyla kullanılır</strong>
+        </li>
+        <li>Fotoğraflar <strong>EverAfter tarafından kalıcı olarak depolanmaz</strong></li>
+        <li>Fotoğraflar <strong>yapay zeka modellerini eğitmek için kullanılmaz</strong></li>
+      </ul>
+
+      <p>
+        Oluşturma işlemi tamamlandıktan sonra orijinal fotoğraflar uygulama
+        tarafından saklanmaz.
+      </p>
+
+      <h2>3. Oluşturulan Görüntüler</h2>
+
+      <p>EverAfter uygulaması tarafından oluşturulan görüntüler:</p>
+
+      <ul>
+        <li><strong>Yalnızca kullanıcının cihazına</strong> kaydedilir</li>
+        <li><strong>Yerel cihaz depolama alanında</strong> saklanır</li>
+        <li><strong>EverAfter sunucularına yüklenmez</strong></li>
+        <li><strong>Üçüncü taraflarla paylaşılmaz</strong></li>
+      </ul>
+
+      <p>
+        Kullanıcılar oluşturulan görüntüler üzerinde tam kontrole sahiptir ve
+        bunları istedikleri zaman cihazlarından silebilirler.
+      </p>
+
+      <h2>4. Veri Depolama</h2>
+
+      <p>EverAfter, kullanıcı görüntülerinin merkezi bir veritabanını tutmamaktadır.</p>
+
+      <ul>
+        <li>Hiçbir kullanıcı fotoğrafı EverAfter sunucularında depolanmaz</li>
+        <li>Hiçbir oluşturulan görüntü EverAfter sunucularında depolanmaz</li>
+        <li>Tüm oluşturulan içerik kullanıcının cihazında kalır</li>
+      </ul>
+
+      <h2>5. Üçüncü Taraf Hizmetleri</h2>
+
+      <p>
+        EverAfter, uygulamanın çalışmasına yardımcı olan sınırlı üçüncü taraf
+        hizmetler kullanabilir; örneğin:
+      </p>
+
+      <ul>
+        <li>Analitik araçlar</li>
+        <li>Yapay zeka görüntü oluşturma hizmetleri</li>
+      </ul>
+
+      <p>
+        Bu hizmetler, istenen çıktıyı oluşturmak için görüntüleri geçici olarak
+        işleyebilir; ancak EverAfter, bu hizmetlerin kullanıcı içeriğini hizmeti
+        sağlamak için gerekli işlemenin ötesinde depolamasına veya yeniden
+        kullanmasına izin vermez.
+      </p>
+
+      <h2>6. Veri Güvenliği</h2>
+
+      <p>
+        Uygulama içinde işlenen bilgileri korumak için makul önlemler alıyoruz.
+        Ancak hiçbir dijital hizmet mutlak güvenliği garanti edemez.
+      </p>
+
+      <p>
+        Kullanıcılar, kendi cihazlarında depolanan içeriği yönetmekten ve güvende
+        tutmaktan sorumludur.
+      </p>
+
+      <h2>7. Çocukların Gizliliği</h2>
+
+      <p>EverAfter, 13 yaşın altındaki çocuklara yönelik değildir.</p>
+
+      <p>Çocuklardan bilerek kişisel bilgi toplamıyoruz.</p>
+
+      <p>
+        Bir çocuğun uygulama aracılığıyla bilgi sağladığını düşünüyorsanız,
+        lütfen bizimle iletişime geçin; gerekli işlemi yapacağız.
+      </p>
+
+      <h2>8. Bu Gizlilik Politikasındaki Değişiklikler</h2>
+
+      <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz.</p>
+
+      <p>
+        Güncelleme yaptığımızda, bu belgenin başındaki "Yürürlük Tarihi"ni
+        güncelleyeceğiz. Değişikliklerden sonra uygulamayı kullanmaya devam
+        etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.
+      </p>
+
+      <h2>9. İletişim</h2>
+
+      <p>
+        Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, bizimle şu
+        adresten iletişime geçebilirsiniz:
+      </p>
+
+      <p>
+        <strong>E-posta:</strong>
+        <a href="mailto:support@everafter.app">support@everafter.app</a>
+      </p>
+    </div>
+
+    <script>
+      function switchLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('ea-lang', lang);
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+        document.title = lang === 'tr'
+          ? 'Gizlilik Politikası – EverAfter'
+          : 'Privacy Policy – EverAfter';
+      }
+
+      const stored = localStorage.getItem('ea-lang');
+      if (stored === 'tr') switchLang('tr');
+    </script>
   </body>
 </html>

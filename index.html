@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>EverAfter Legal</title>
 
     <style>
@@ -24,6 +23,7 @@
         padding: 40px;
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        position: relative;
       }
 
       h1 {
@@ -62,22 +62,89 @@
         font-size: 14px;
         color: #888;
       }
+
+      /* Language switcher */
+      .lang-switcher {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        background: #f2f3f5;
+        border-radius: 8px;
+        padding: 4px;
+      }
+
+      .lang-switcher button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #888;
+        font-family: inherit;
+        transition: 0.15s;
+        display: inline-block;
+      }
+
+      .lang-switcher button.active {
+        background: white;
+        color: #222;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      }
+
+      .lang-switcher button:hover:not(.active) {
+        color: #444;
+      }
+
+      /* Hide non-active language content */
+      html[lang="en"] .lang-tr { display: none; }
+      html[lang="tr"] .lang-en { display: none; }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <h1>EverAfter</h1>
-
-      <p>Legal information for the EverAfter mobile application.</p>
-
-      <div class="links">
-        <a href="privacy.html"> Privacy Policy </a>
-
-        <a href="terms.html"> Terms of Service </a>
+      <div class="lang-switcher">
+        <button id="btn-en" onclick="switchLang('en')" class="active">EN</button>
+        <button id="btn-tr" onclick="switchLang('tr')">TR</button>
       </div>
 
-      <div class="footer">© 2026 EverAfter</div>
+      <div class="lang-en">
+        <h1>EverAfter</h1>
+        <p>Legal information for the EverAfter mobile application.</p>
+        <div class="links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="footer">© 2026 EverAfter</div>
+      </div>
+
+      <div class="lang-tr">
+        <h1>EverAfter</h1>
+        <p>EverAfter mobil uygulaması için yasal bilgiler.</p>
+        <div class="links">
+          <a href="privacy.html">Gizlilik Politikası</a>
+          <a href="terms.html">Kullanım Koşulları</a>
+        </div>
+        <div class="footer">© 2026 EverAfter</div>
+      </div>
     </div>
+
+    <script>
+      function switchLang(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('ea-lang', lang);
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+        document.title = lang === 'tr' ? 'EverAfter Yasal' : 'EverAfter Legal';
+      }
+
+      const stored = localStorage.getItem('ea-lang');
+      if (stored === 'tr') switchLang('tr');
+    </script>
   </body>
 </html>
